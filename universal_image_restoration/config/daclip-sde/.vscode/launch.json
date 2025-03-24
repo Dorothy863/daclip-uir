@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/workspace/daclip-uir/universal-image-restoration/config/daclip-sde/test.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "-opt=/workspace/daclip-uir/universal-image-restoration/config/daclip-sde/options/test.yml"
+            ],
+            "env": {
+                "PYTHONPATH": "/workspace/daclip-uir"
+            }
+        }
+    ]
+}

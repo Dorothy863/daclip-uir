@@ -15,7 +15,8 @@ import options as option
 from models import create_model
 
 sys.path.insert(0, "../../")
-import open_clip
+import universal_image_restoration.open_clip as open_clip
+print(f"Loaded from: {open_clip.__file__}")
 import utils as util
 from data import create_dataloader, create_dataset
 from data.util import bgr2ycbcr

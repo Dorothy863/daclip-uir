@@ -6,11 +6,10 @@ import math
 
 import yaml
 
-try:
-    sys.path.append("../../")
-    from utils import OrderedYaml
-except ImportError:
-    pass
+sys.path.append("../../")
+sys.path.append("/workspace/daclip-uir/universal_image_restoration/")
+from utils import OrderedYaml
+
 
 Loader, Dumper = OrderedYaml()
 

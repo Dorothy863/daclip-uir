@@ -14,6 +14,8 @@ from tqdm import tqdm
 IMG_EXTENSIONS = ['.jpg', '.JPG', '.jpeg', '.JPEG', '.png', '.PNG', '.ppm', '.PPM', '.bmp', '.BMP', 'tif']
 
 DEGRADATION_TYPES = ['motion-blurry','hazy','jpeg-compressed','low-light','noisy','raindrop','rainy','shadowed','snowy','uncompleted']
+DEGRADATION_TYPES = ['motion-blurry','hazy','low-light','raindrop','rainy','shadowed','snowy','uncompleted']
+
 
 def is_image_file(filename):
     return any(filename.endswith(extension) for extension in IMG_EXTENSIONS)
@@ -66,11 +68,11 @@ def generate_captions(dataroot, ci, mode='train'):
 
 
 if __name__ == "__main__":
-    dataroot = 'datasets/universal'
+    dataroot = '/workspace/datasets/SD_Rest'
 
-    ci = Interrogator(Config(clip_model_name="ViT-L-14/openai"))
+    ci = Interrogator(Config(clip_model_name="ViT-L-14//workspace/sd_models/vit_large_patch14_clip_224.openai/open_clip_model.safetensors", caption_model_name="blip-large-local"))
 
-    generate_captions(dataroot, ci, 'val')
+    # generate_captions(dataroot, ci, 'val')
     generate_captions(dataroot, ci, 'train')
     
 
