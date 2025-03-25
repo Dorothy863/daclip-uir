@@ -8,6 +8,8 @@ import numpy as np
 import torch
 import torch.utils.data as data
 
+import torchvision.transforms as transforms
+
 try:
     sys.path.append("..")
     import data.util as util
@@ -144,6 +146,18 @@ class LQGTDataset(data.Dataset):
 
         img_GT = torch.from_numpy(np.ascontiguousarray(np.transpose(img_GT, (2, 0, 1)))).float()
         img_LR = torch.from_numpy(np.ascontiguousarray(np.transpose(img_LR, (2, 0, 1)))).float()
+
+        process = transforms.Compose(
+            [
+                transforms.ToPILImage(),
+                transforms.Resize(512, interpolation=2),
+                transforms.CenterCrop(512, pad_if_needed=True),
+                transforms.ToTensor(),
+            ]
+        )
+
+        img_GT = process(img_GT)
+        img_LR = process(img_LR)
 
         return {"LQ": img_LR, "GT": img_GT, "LQ_clip": lq4clip, "LQ_path": LR_path, "GT_path": GT_path}
 
