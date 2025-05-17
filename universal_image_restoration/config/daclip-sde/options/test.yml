@@ -51,5 +51,5 @@ network_G:
 
 #### path
 path:
-  pretrain_model_G: /workspace/sd_models/daclip-uir-ViT-B-32-irsde/universal-ir.pth
-  daclip: /workspace/sd_models/daclip-uir-ViT-B-32-irsde/daclip_ViT-B-32.pt
+  pretrain_model_G: /workspace/sd_models/da_clip/universal-ir.pth
+  daclip: /workspace/sd_models/da_clip/daclip_ViT-B-32.pt

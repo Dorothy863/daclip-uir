@@ -37,21 +37,17 @@ def create_dataset(dataset_opt):
     mode = dataset_opt["mode"]
     if mode == "LQ":  # Predictor
         from data.LQ_dataset import LQDataset as D
-        dataset = D(dataset_opt)
     elif mode == "LQGT":  # SFTMD
         from data.LQGT_dataset import LQGTDataset as D
-        dataset = D(dataset_opt)
     elif mode == "GT":  # Corrector
         from data.GT_dataset import GTDataset as D
-        dataset = D(dataset_opt)
     elif mode == "MDGT":  # Corrector
         from data.MDGT_dataset import MDGTDataset as D
-        dataset = D(dataset_opt)
     elif mode == "MD":  # Corrector
         from data.MD_dataset import MDDataset as D
-        dataset = D(dataset_opt)
     else:
         raise NotImplementedError("Dataset [{:s}] is not recognized.".format(mode))
+    dataset = D(dataset_opt)
 
     logger = logging.getLogger("base")
     logger.info(

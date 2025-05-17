@@ -151,7 +151,7 @@ class LQGTDataset(data.Dataset):
             [
                 transforms.ToPILImage(),
                 transforms.Resize(512, interpolation=2),
-                transforms.CenterCrop(512, pad_if_needed=True),
+                transforms.CenterCrop(512),
                 transforms.ToTensor(),
             ]
         )
