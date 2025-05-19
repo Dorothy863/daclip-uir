@@ -34,8 +34,8 @@ datasets:
   test1:
    name: Test
    mode: LQGT
-   dataroot_GT: /workspace/datasets/SD_Rest/val/motion-blurry/GT
-   dataroot_LQ: /workspace/datasets/SD_Rest/val/motion-blurry/LQ
+   dataroot_GT: /workspace/datasets/SD_Rest/val/low-light/GT
+   dataroot_LQ: /workspace/datasets/SD_Rest/val/low-light/LQ
   
 #### network structures
 network_G:
